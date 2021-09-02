@@ -1,0 +1,245 @@
+/* Hero Style */
+.main__container {
+	display: flex;
+	background: #f6f5f5;
+	margin: 20px;
+	justify-content: space-between;
+	align-items: center;
+	/* padding: 0 50px; */
+	/* width: 800px;
+	max-width: 100%; */
+}
+
+.container__content {
+	text-align: center;
+	padding: 80px;
+	/* height: 100%; */
+}
+
+.hero__img img {
+	position: relative;
+	/* right: 100px; */
+	width: 100%;
+	/* height: auto; */
+	height: 590px;
+	opacity: 0.8;
+}
+
+.name {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+}
+
+.fname {
+	text-decoration-line: underline;
+	color: #012e6f;
+}
+.lname {
+	text-decoration-line: underline;
+	color: #4bb9df;
+}
+.location {
+	padding-top: 40px;
+	line-height: 25px;
+}
+
+.cta__btn button {
+	border-radius: 20px;
+	margin: 15px;
+	color: #fff;
+	font-weight: bold;
+	background: rgba(1, 46, 111, 0.8);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-size: 18px;
+	width: 175px;
+	height: 62px;
+	border: 0;
+}
+
+button:focus {
+	outline: none;
+}
+
+#about__btn {
+	background: #4bb9df;
+}
+
+.project__container {
+	/* display: inline; */
+	background: #f6f5f5;
+	margin: 50px 20px;
+	padding: 10px 50px;
+	text-align: center;
+}
+
+.project__container h1 {
+	color: #012e6f;
+	font-size: 30px;
+	line-height: 48px;
+	text-decoration-line: underline;
+	text-transform: uppercase;
+	/* padding: 30px; */
+}
+
+.proj__img {
+	/* margin-bottom: 0; */
+	/* border-bottom: 2px solid #000; */
+	height: 300px;
+	width: 500px;
+	max-width: auto;
+}
+.proj__img img {
+	border-radius: 20px 20px 0px 0px;
+	height: 300px;
+	width: 500px;
+	max-width: auto;
+}
+
+.project__preview {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.project__view {
+	padding: 10px 30px 10px 10px;
+}
+
+.links {
+	display: flex;
+	color: #012e6f;
+	background: #4bbadf85;
+	border-radius: 0px 0px 20px 20px;
+	border-top: 2px solid #012e6f;
+	padding: 10px 0;
+	justify-content: space-around;
+}
+
+i {
+	font-size: 40px;
+}
+
+.fas {
+	/* transform: rotate(44.07deg); */
+}
+
+i h5 {
+	margin: 0;
+	font-size: 15px;
+}
+
+.proj__img img:hover {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+.links h3 {
+	color: #f4f4f4;
+	text-decoration: underline;
+	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+	margin-bottom: 0;
+}
+
+.cta__btn a {
+	color: #f4f4f4;
+	text-decoration: none;
+}
+
+.social-section {
+	display: flex;
+	align-items: center;
+	position: relative;
+	/* width: 100%; */
+	justify-content: center;
+	background: rgba(196, 196, 196, 0.2);
+	height: 600px;
+}
+.social-section::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* .social-section img {
+	height: 600px;
+	width: 100%;
+} */
+
+#small-img {
+	background-image: url('../img/20201021_130451.jpg');
+	width: 100%;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+footer h2 {
+	/* font-weight: bold; */
+	line-height: 48px;
+	letter-spacing: 0.05em;
+}
+
+.first-img {
+	background-image: url('../img/20201021_131124.jpg');
+	width: 100%;
+	/* position: absolute; */
+	/* width: 309.18px; */
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.last-img {
+	background-image: url('../img/20201021_131122.jpg');
+	/* position: absolute; */
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.first-img button,
+.last-img button {
+	display: inline;
+	/* flex-direction: column; */
+	justify-content: space-between;
+	align-items: center;
+	/* position: relative; */
+	/* display: flex; */
+
+	/* color: #f4f4f4; */
+	/* top: 45%; */
+	/* left: 40%; */
+}
+
+.small-img-btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.small-img-btn button {
+	/* padding: 10px; */
+	margin: 90px;
+	position: relative;
+	/* top: 50px; */
+	bottom: 20px;
+}
+
+#github {
+	/* margin-bottom: 50px; */
+}
