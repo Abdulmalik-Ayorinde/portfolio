@@ -75,7 +75,7 @@ export default function Home() {
       title: 'Abia OneID Authenticator',
       category: 'Mobile App',
       year: '2022-2025',
-      description: 'Authentication system for Abia state government providing secure identity verification for citizens. Built native iOS application with robust security features.',
+      description: 'Authentication system for Abia state government providing secure identity verification for staffs. Built native iOS application with robust security features.',
       tech: ['React Native', 'Node.js', 'iOS'],
       link: 'https://apps.apple.com/us/app/abia-oneid-authenticator/id6475302978',
       impact: ['Government deployment', 'Secure authentication', 'App Store published'],
@@ -181,7 +181,7 @@ export default function Home() {
                 View Work
               </a>
               <a
-                href="/mnt/user-data/outputs/Abdulmalik_Ayorinde_CV_2025_Condensed.pdf"
+                href="/Abdulmalik_Ayorinde_CV_2026.pdf"
                 download
                 className="px-8 py-4 bg-white dark:bg-neutral-800 border-4 border-neutral-950 dark:border-neutral-50 font-display uppercase text-sm tracking-wider hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
               >
