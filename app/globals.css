@@ -10,53 +10,51 @@
   }
 
   * {
-    @apply border-neutral-950;
+    @apply border-gray-200;
   }
 
   body {
-    @apply bg-neutral-50 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50;
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50;
   }
 
   ::selection {
-    @apply bg-accent-yellow dark:bg-accent-yellow-muted text-neutral-950;
+    @apply bg-primary-500 text-white;
   }
 }
 
 @layer utilities {
-  .thick-border {
-    border-width: 3px;
-  }
-  
-  .extra-thick-border {
-    border-width: 5px;
+  .card-modern {
+    @apply rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300;
   }
 
-  .text-outlined {
-    -webkit-text-stroke: 2px currentColor;
-    -webkit-text-fill-color: transparent;
+  .card-hover {
+    @apply transform hover:-translate-y-2 transition-all duration-300;
   }
 
-  .rotate-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-md;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-200 dark:bg-neutral-800;
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neutral-950 dark:bg-neutral-400;
+  @apply bg-primary-500 dark:bg-primary-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neutral-800 dark:bg-neutral-300;
+  @apply bg-primary-600 dark:bg-primary-500;
 }
 
 /* Smooth scroll */
@@ -64,110 +62,49 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Brutalist grid lines */
-.grid-lines {
-  background-image:
-    linear-gradient(to right, rgb(23 23 23 / 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(23 23 23 / 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+/* Modern animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.dark .grid-lines {
-  background-image:
-    linear-gradient(to right, rgb(245 245 245 / 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(245 245 245 / 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Marquee animation container */
-.marquee {
-  display: flex;
-  overflow: hidden;
-  user-select: none;
-  gap: 2rem;
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.marquee-content {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  min-width: 100%;
-  animation: marquee 25s linear infinite;
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+/* Modern button styles */
+.btn-primary {
+  @apply px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg;
 }
 
-/* Hover effects */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.btn-secondary {
+  @apply px-8 py-4 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border-2 border-primary-600 dark:border-primary-400 rounded-lg font-semibold hover:bg-primary-50 dark:hover:bg-gray-700 transition-all duration-200;
 }
 
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 8px 8px 0 rgb(23 23 23);
+/* Project card */
+.project-card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden;
 }
 
-.dark .hover-lift:hover {
-  box-shadow: 8px 8px 0 rgb(245 245 245);
-}
-
-/* Brutalist button */
-.btn-brutalist {
-  @apply px-8 py-4 bg-accent-yellow border-4 border-neutral-950 font-display uppercase text-sm tracking-wider transition-all;
-  box-shadow: 4px 4px 0 rgb(23 23 23);
-}
-
-.btn-brutalist:hover {
-  box-shadow: 6px 6px 0 rgb(23 23 23);
-  transform: translate(-2px, -2px);
-}
-
-.btn-brutalist:active {
-  box-shadow: 2px 2px 0 rgb(23 23 23);
-  transform: translate(2px, 2px);
-}
-
-.dark .btn-brutalist {
-  box-shadow: 4px 4px 0 rgb(245 245 245);
-}
-
-.dark .btn-brutalist:hover {
-  box-shadow: 6px 6px 0 rgb(245 245 245);
-}
-
-.dark .btn-brutalist:active {
-  box-shadow: 2px 2px 0 rgb(245 245 245);
-}
-
-/* Project card stacking effect */
-.stack-effect {
-  position: relative;
-}
-
-.stack-effect::before,
-.stack-effect::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 3px solid rgb(23 23 23);
-  background: white;
-  z-index: -1;
-}
-
-.stack-effect::before {
-  transform: translate(6px, 6px);
-}
-
-.stack-effect::after {
-  transform: translate(12px, 12px);
-}
-
-.dark .stack-effect::before,
-.dark .stack-effect::after {
-  border: 3px solid rgb(245 245 245);
-  background: rgb(38 38 38);
+.project-card:hover {
+  @apply transform -translate-y-2;
 }
