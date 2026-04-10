@@ -404,8 +404,8 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-6 text-primary-900 dark:text-primary-100">Education</h3>
                 <div className="border-l-4 border-primary-500 pl-4">
                   <div className="font-semibold text-gray-900 dark:text-white mb-1">B.Sc. Computer Science</div>
-                  <div className="text-sm text-primary-600 dark:text-primary-400 mb-2">Tai Solarin University, 2024</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Second Class Upper</div>
+                  <div className="text-sm text-primary-600 dark:text-primary-400 mb-2">Tai Solarin University</div>
+                
                 </div>
               </div>
             </div>
