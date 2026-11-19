@@ -46,7 +46,7 @@ export default function Home() {
                 Full Stack Software Engineer with 5+ years of experience building production-grade
                 applications that solve real business problems. Specialized in the React/Node.js ecosystem,
                 with a proven track record of delivering high-impact solutions processing over NGN100M
-                in transactions. Recently deep into AI/LLM integration — building multi-agent systems,
+                in transactions. Recently deep into AI/LLM integration, building multi-agent systems,
                 model routing, and AI-assisted development workflows.
               </p>
               <div className="flex flex-wrap items-center gap-3 mt-8">
@@ -63,13 +63,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column — Status */}
+            {/* Right Column: Status */}
             <div className="w-full lg:w-[329px] flex-shrink-0 flex flex-col gap-2.5">
+              <div className="w-full max-lg:h-auto max-lg:aspect-[353/388] rounded-[5px] overflow-hidden bg-[#141414]">
+                <img
+                  src="/me/Serious%20Portrait%20on%20Yellow%20Background.png"
+                  alt="Abdulmalik Ayorinde"
+                  className="w-full h-full object-cover rounded-[5px]"
+                  loading="lazy"
+                />
+              </div>
               <div className="flex items-center gap-2 text-base font-normal leading-5 text-[rgba(255,255,255,0.7)]">
                 <div className="w-3.5 h-3.5 rounded-full border border-[#0D7A50] bg-[#D9D9D9] flex items-center justify-center">
                   <span className="w-2 h-2 rounded-full bg-[#0D7A50] block" />
                 </div>
-                <span>Open to remote opportunities</span>
+                <span>Open to opportunities</span>
               </div>
             </div>
           </div>
@@ -173,7 +181,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-[50px] items-start justify-between">
-            {/* Left — Photo */}
+            {/* Left: Photo */}
             <div className="w-full lg:w-[461px] flex-shrink-0 flex flex-col gap-2.5 reveal">
               <div className="w-full h-[575px] max-lg:h-auto max-lg:aspect-[353/388] rounded-[5px] overflow-hidden bg-[#141414]">
                 <img
@@ -191,7 +199,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — Content */}
+            {/* Right: Content */}
             <div className="w-full lg:w-[769px] flex-shrink-0 flex flex-col justify-between gap-6 reveal">
               <h3 className="text-[30px] font-medium leading-10 text-white max-w-[690px]">
                 Picture me as an inquisitive explorer, driven by a passion for building systems that scale and mentoring the next generation of developers.
@@ -208,7 +216,7 @@ export default function Home() {
                   Today, I specialize in the React/Node.js ecosystem with deep expertise in React Native for mobile.
                   I&apos;ve architected everything from restaurant POS systems processing NGN100M+ in transactions to
                   real estate platforms connecting thousands of users. Recently, I&apos;ve been deeply integrating AI
-                  and LLM-powered tooling into my workflows — from building multi-agent systems with CrewAI to routing
+                  and LLM-powered tooling into my workflows, from building multi-agent systems with CrewAI to routing
                   between models for cost-efficient task execution.
                 </p>
                 <p>

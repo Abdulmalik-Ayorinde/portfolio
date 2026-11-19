@@ -57,7 +57,7 @@ export const projects: Project[] = [
       problem: [
         'Agricultural data is often aggregated to coarse geographic resolutions, making it difficult to train machine learning models that need field-level precision. Researchers and data scientists working on crop yield forecasting, acreage estimation, and crop stress detection needed access to historical crop rotation data at the individual field level.',
         'Existing tools for exploring USDA Cropland Data Layer were either too technical (requiring GIS expertise) or too limited (showing only current-year data without historical context). There was no easy way to visually explore how specific fields rotated between crops like corn and soy over an 8-year period.',
-        'The challenge was making this data both accessible and actionable — turning raw satellite-derived crop classifications into an interactive exploration tool that could inform agricultural planning and ML model training.',
+        'The challenge was making this data both accessible and actionable. I needed to turn raw satellite-derived crop classifications into an interactive exploration tool that could inform agricultural planning and ML model training.',
       ],
       challenge: [
         'The biggest technical challenge was rendering millions of field polygons on an interactive map without compromising performance. The USDA Cropland Data Layer contains pixel-level classifications for the entire continental US, and filtering to a Midwest pilot region still left us with hundreds of thousands of field boundaries to visualize.',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
         'The CropView application (app.openfields.ai) became the centerpiece of the platform. It renders an interactive map where users can explore field-level crop rotations across a Midwest pilot region covering corn and soy rotations from 2016 to 2024.',
         'The map uses deck.gl with H3 hexagonal tiling for performant rendering at scale. Users can zoom from a regional overview down to individual fields, toggle between years, and see color-coded crop classifications. The visualization updates in real time as users pan and zoom.',
         'The product website (openfields.ai) presents the dataset with clear coverage details, a sample schema explorer, and use case documentation. The early access sign-up flow captures intent from potential users and integrates with a waitlist management system.',
-        'The entire stack — React, Next.js, deck.gl, Mapbox, H3, and Fused UDFs — works together to deliver a seamless experience from data exploration to business engagement.',
+        'The entire stack, React, Next.js, deck.gl, Mapbox, H3, and Fused UDFs, works together to deliver a seamless experience from data exploration to business engagement.',
       ],
       impactSection: [
         'OpenFields launched with the CropView pilot and has generated significant interest from the agricultural data science community. The interactive map has become a key differentiator, allowing potential users to immediately see the value of field-level data.',
@@ -119,7 +119,7 @@ export const projects: Project[] = [
       problem: [
         'Property management in Nigeria and many African markets is still largely manual and fragmented. Landlords track rent payments in spreadsheets or notebooks, lease agreements are paper-based, and property inspections are done with phone cameras and WhatsApp messages.',
         'Renters face their own challenges: finding verified properties, understanding lease terms, making secure payments, and getting maintenance issues resolved. The entire rental experience lacked a unified digital platform.',
-        'The market needed a solution that could handle the full rental lifecycle — from discovery to move-out — in one place, with reliable payment processing and transparent communication between landlords and tenants.',
+        'The market needed a solution that could handle the full rental lifecycle, from discovery to move-out, in one place, with reliable payment processing and transparent communication between landlords and tenants.',
       ],
       challenge: [
         'Building a payment system for the Nigerian market presented unique challenges. Stripe was not fully available in Nigeria at the time, so I had to architect a hybrid payment flow that could handle international card payments while complying with local financial regulations.',
@@ -136,7 +136,7 @@ export const projects: Project[] = [
         'Rentzen became a comprehensive property management platform with a React Native mobile app for both landlords and tenants. The app features property listing management, tenant application workflows, scheduled inspection tools, digital lease generation, and automated rent collection.',
         'The Stripe payment integration handles rent collection with automated reminders, late fee calculation, and receipt generation. Webhook processing ensures payment status is always synchronized between Stripe and the Rentzen backend, even when network conditions are unstable.',
         'The backend API supports role-based access control, allowing landlords to manage multiple properties while tenants see only their relevant data. The inspection workflow includes photo uploads, checklist completion, and automated report generation.',
-        'The codebase was built with scalability in mind — the PostgreSQL schema uses proper indexing for query performance, the API implements rate limiting, and the mobile app caches data for offline functionality.',
+        'The codebase was built with scalability in mind, the PostgreSQL schema uses proper indexing for query performance, the API implements rate limiting, and the mobile app caches data for offline functionality.',
       ],
       impactSection: [
         'Rentzen successfully launched on both iOS and Android app stores, providing landlords with a unified platform for property management. The Stripe integration enabled reliable rent collection that previously required manual bank transfers and receipt tracking.',
@@ -147,7 +147,7 @@ export const projects: Project[] = [
         'Payment integration is never just about the API call. Stripe webhooks, idempotency, retry logic, and reconciliation dashboards are all essential for production reliability. I learned to treat payment flows as critical infrastructure deserving of extensive testing and monitoring.',
         'Leading a team is as much about process as it is about code. Establishing clear PR review standards, coding conventions, and architecture decision records early pays dividends as the team grows. The time invested in mentoring junior developers compounds into better code quality and faster delivery.',
         'React Native is a powerful choice for cross-platform development, but it requires careful attention to platform-specific behaviors. I learned to abstract platform differences behind well-designed components rather than littering conditional code throughout the app.',
-        'Building for emerging markets means designing for unreliable networks and diverse devices. Caching strategies, optimistic UI updates, and graceful degradation are not nice-to-haves — they are essential for user trust.',
+        'Building for emerging markets means designing for unreliable networks and diverse devices. Caching strategies, optimistic UI updates, and graceful degradation are not nice-to-haves. They are essential for user trust.',
       ],
     },
   },
@@ -175,13 +175,13 @@ export const projects: Project[] = [
       ],
       overview: [
         'Dertbag is a cross-platform mobile application that connects a Shopify store to a native iOS experience, enabling seamless product browsing and in-app purchases for 500+ products.',
-        'As the Full Stack Engineer, I built the entire app from scratch — from the mobile frontend to the proxy server architecture that bridges Shopify Storefront API with the mobile experience.',
+        'As the Full Stack Engineer, I built the entire app from scratch. From the mobile frontend to the proxy server architecture that bridges Shopify Storefront API with the mobile experience.',
         'The project required solving the challenge of making a large product catalog feel fast and responsive on mobile while maintaining real-time synchronization with the Shopify backend.',
       ],
       problem: [
         'The client had an established Shopify store with over 500 products but no native mobile presence. Their mobile web experience was slow, with product images taking too long to load and the checkout flow feeling clunky on touch devices.',
         'Shopify Storefront API has rate limits and complex pagination that makes direct mobile integration challenging. Calling the API directly from the mobile app would hit limits quickly and provide a poor user experience.',
-        'The business needed a native app experience that would load faster, feel more responsive, and increase conversion rates — but they could not afford to maintain a separate product catalog outside of Shopify.',
+        'The business needed a native app experience that would load faster, feel more responsive, and increase conversion rates, but they could not afford to maintain a separate product catalog outside of Shopify.',
       ],
       challenge: [
         'The core technical challenge was architecting a proxy server that could efficiently sync product data from Shopify to the mobile app without hitting API rate limits or creating stale data.',
@@ -238,12 +238,12 @@ export const projects: Project[] = [
       overview: [
         'Panthera Tech School LMS is a comprehensive learning management system that handles course enrollment, live video classes, payment processing, content delivery, and automated certificate generation for a coding bootcamp in Lagos, Nigeria.',
         'As Lead Instructor and Software Engineer, I designed the curriculum, built the platform, and trained 300+ students across 4-5 cohorts with 50+ graduate job placements.',
-        'The LMS needed to handle the full student lifecycle — from discovery and enrollment through course completion and job placement — while also supporting instructors with tools for content creation, live classes, and progress tracking.',
+        'The LMS needed to handle the full student lifecycle, from discovery and enrollment through course completion and job placement, while also supporting instructors with tools for content creation, live classes, and progress tracking.',
       ],
       problem: [
         'Running a coding bootcamp without a proper LMS meant managing students through spreadsheets, delivering classes through ad-hoc Zoom links, collecting payments manually, and generating certificates one by one in design tools.',
         'The manual process was unsustainable as the school grew from 20 students to 100+. Instructors spent hours on administrative tasks instead of teaching. Students had no centralized place to access course materials, track progress, or interact with peers.',
-        'Payment collection was particularly painful — tracking who had paid, sending reminders, and reconciling bank transfers consumed significant administrative time every month.',
+        'Payment collection was particularly painful, tracking who had paid, sending reminders, and reconciling bank transfers consumed significant administrative time every month.',
       ],
       challenge: [
         'Building a platform that serves both students and instructors with different needs and permissions was complex. Students need a simple, focused interface for learning. Instructors need tools for content management, student analytics, and class scheduling.',
@@ -268,8 +268,8 @@ export const projects: Project[] = [
         'SEO-driven organic traffic became a major student acquisition channel, reducing reliance on paid advertising. The technical blog and optimized course pages rank well for relevant search terms in the Nigerian tech education market.',
       ],
       learned: [
-        'Building for education requires designing for two very different user types — students who need simplicity and focus, and instructors who need powerful tools. I learned to create clear separation between these interfaces while maintaining a consistent design system.',
-        'Automating administrative tasks has outsized impact. The 5-10 hours saved monthly on certificate generation and payment reconciliation freed up instructors to focus on what matters — teaching and mentoring students.',
+        'Building for education requires designing for two very different user types, students who need simplicity and focus, and instructors who need powerful tools. I learned to create clear separation between these interfaces while maintaining a consistent design system.',
+        'Automating administrative tasks has outsized impact. The 5-10 hours saved monthly on certificate generation and payment reconciliation freed up instructors to focus on what matters. Teaching and mentoring students.',
         'SEO is a long game that pays off. The investment in structured data, performance optimization, and content marketing took months to show results but eventually became the school\'s most cost-effective acquisition channel.',
         'Hybrid databases (MongoDB + PostgreSQL) can be the right choice when you have both structured and unstructured data needs. MongoDB\'s flexibility was perfect for course content, while PostgreSQL\'s reliability was essential for payments and user data.',
       ],
@@ -305,7 +305,7 @@ export const projects: Project[] = [
         'Management had no visibility into which menu items were performing well, which locations were most profitable, or when inventory needed restocking. Decision-making was based on gut feeling rather than data.',
       ],
       challenge: [
-        'Building a POS interface that could handle high-volume restaurant operations required real-time performance. Every order needed to be reflected immediately across all connected devices — kitchen displays, manager dashboards, and reporting tools.',
+        'Building a POS interface that could handle high-volume restaurant operations required real-time performance. Every order needed to be reflected immediately across all connected devices. Kitchen displays, manager dashboards, and reporting tools.',
         'The inventory system needed to track perishable goods with expiration dates, automatically deduct ingredients when dishes were ordered, and alert staff when items ran low. Getting the data model right was critical.',
         'Leading a small frontend team while also contributing significant code required balancing hands-on development with mentorship, code reviews, and architectural decisions.',
       ],
@@ -319,7 +319,7 @@ export const projects: Project[] = [
         'The platform delivers a real-time POS interface where waitstaff can take orders on tablets, send them directly to kitchen displays, and process payments through integrated card readers. Orders are reflected instantly across all connected devices.',
         'The inventory management module tracks stock levels in real time, automatically deducts ingredients when dishes are prepared, and generates purchase orders when items run low. Expiration date tracking helps reduce food waste.',
         'The analytics dashboard provides location-by-location sales breakdowns, top-performing menu items, hourly sales patterns, and staff performance metrics. Management can make data-driven decisions about menu changes, staffing, and promotions.',
-        'Automated receipt printing integrates with thermal printers at each location, and end-of-day reports are generated automatically — eliminating the 30+ minutes of manual reconciliation that was previously required.',
+        'Automated receipt printing integrates with thermal printers at each location, and end-of-day reports are generated automatically, eliminating the 30+ minutes of manual reconciliation that was previously required.',
       ],
       impactSection: [
         'The platform has processed over NGN100 million in transactions across multiple restaurant locations. The automated reporting and real-time inventory tracking have significantly reduced operational overhead.',
@@ -330,7 +330,7 @@ export const projects: Project[] = [
         'Real-time systems require careful attention to state synchronization. WebSockets are powerful but introduce complexity around connection management, reconnection logic, and conflict resolution. I learned to implement robust error handling and fallback mechanisms.',
         'Inventory management data models are deceptively complex. Tracking ingredients, recipes, stock levels, and expiration dates requires a well-designed relational schema. Getting this right early prevented painful migrations later.',
         'Leading a team while writing code requires intentional time management. I learned to block specific times for mentorship and reviews, separate from deep work sessions, to ensure both responsibilities got adequate attention.',
-        'Restaurant operations are fast-paced and unforgiving. The UI needed to be optimized for speed — large touch targets, minimal navigation, and instant feedback. Desktop web patterns did not translate directly to a POS interface.',
+        'Restaurant operations are fast-paced and unforgiving. The UI needed to be optimized for speed. Large touch targets, minimal navigation, and instant feedback. Desktop web patterns did not translate directly to a POS interface.',
       ],
     },
   },
@@ -355,12 +355,12 @@ export const projects: Project[] = [
       ],
       overview: [
         'Hermes is a personal AI agent that I control through Telegram to execute tasks, deliver real-time updates, and manage automated workflows. It runs on Oracle Cloud Infrastructure and uses a multi-model architecture for cost-efficient task execution.',
-        'As a solo developer, I designed and built the entire system — from the Telegram bot interface to the model routing logic to the cloud infrastructure. The project was born from a desire to automate repetitive tasks while keeping costs low.',
+        'As a solo developer, I designed and built the entire system. From the Telegram bot interface to the model routing logic to the cloud infrastructure. The project was born from a desire to automate repetitive tasks while keeping costs low.',
         'The agent handles a variety of tasks: web scraping, data processing, scheduled reports, notifications, and simple research. Each task is routed to the most appropriate model based on complexity and cost considerations.',
       ],
       problem: [
         'I found myself repeatedly doing the same tasks: checking websites for updates, processing data exports, generating daily summaries, and monitoring various systems. These tasks were too small to warrant building full applications but too frequent to do manually.',
-        'Existing AI assistants were either too expensive for routine tasks (always using GPT-4) or too limited in capability (rule-based bots). I needed a system that could intelligently route tasks to the right model — using cheaper models for simple tasks and powerful models for complex ones.',
+        'Existing AI assistants were either too expensive for routine tasks (always using GPT-4) or too limited in capability (rule-based bots). I needed a system that could intelligently route tasks to the right model, using cheaper models for simple tasks and powerful models for complex ones.',
         'I also wanted a mobile-friendly interface for interacting with the agent. Since I always have Telegram on my phone, it became the natural choice for a conversational command interface.',
       ],
       challenge: [
@@ -371,7 +371,7 @@ export const projects: Project[] = [
       approach: [
         'I architected the system with three model tiers: small local models (via Ollama) for simple pattern matching and classification, medium models (GPT-3.5) for routine tasks like summarization and data extraction, and large models (GPT-4) for complex reasoning, planning, and validation.',
         'The Telegram bot interface uses a simple command structure. Users can send natural language requests, and the system classifies them into task types, routes them to the appropriate model tier, and returns results with source links and confidence scores.',
-        'For task execution, I implemented a plugin architecture where each task type (scrape, summarize, monitor, report) has a dedicated handler. Handlers can chain multiple model calls — for example, a research task might use a small model to generate search queries, a medium model to summarize results, and a large model to synthesize conclusions.',
+        'For task execution, I implemented a plugin architecture where each task type (scrape, summarize, monitor, report) has a dedicated handler. Handlers can chain multiple model calls, for example, a research task might use a small model to generate search queries, a medium model to summarize results, and a large model to synthesize conclusions.',
         'The OCI deployment uses PM2 for process management, systemd for service reliability, and cron for scheduled tasks. Logs are aggregated to a local file with rotation, and health checks ensure the bot reconnects if the Telegram connection drops.',
       ],
       solution: [
@@ -417,7 +417,7 @@ export const projects: Project[] = [
         'As the Full Stack Developer, I architected the entire platform from database design to frontend implementation. The system needed to handle large volumes of property data while providing an intuitive interface for real estate agents.',
       ],
       problem: [
-        'NYC real estate agents manage complex client relationships across multiple roles — buyers, sellers, renters, and landlords. Each client type has different needs, timelines, and communication preferences.',
+        'NYC real estate agents manage complex client relationships across multiple roles. Buyers, sellers, renters, and landlords. Each client type has different needs, timelines, and communication preferences.',
         'Existing CRM tools were either too generic (designed for sales teams) or too specialized (focused only on one transaction type). Agents needed a unified platform that could handle the full spectrum of real estate relationships.',
         'Property matching was entirely manual. Agents spent hours scrolling through listing sites trying to find properties that matched client criteria, often missing new listings that appeared between searches.',
       ],
@@ -472,7 +472,7 @@ export const projects: Project[] = [
         'As Full Stack Engineer, I designed and built the mobile application and backend infrastructure. The app needed to work reliably in government office environments with varying lighting conditions and network connectivity.',
       ],
       problem: [
-        'Government offices in Abia State were using manual attendance tracking — paper sign-in sheets or simple log books. This created opportunities for buddy punching (one person signing in for another), inaccurate time records, and delayed payroll processing.',
+        'Government offices in Abia State were using manual attendance tracking. Paper sign-in sheets or simple log books. This created opportunities for buddy punching (one person signing in for another), inaccurate time records, and delayed payroll processing.',
         'The state government needed a modern, secure attendance system that could verify identity biometrically, work across multiple office locations, and integrate with existing payroll systems.',
       ],
       challenge: [
@@ -522,24 +522,24 @@ export const projects: Project[] = [
         'Includes document management, shipment tracking, and organization tools for import businesses.',
       ],
       overview: [
-        'ClearPath is a B2B SaaS platform I founded for managing the entire lifecycle of an import shipment — from origin to delivery. It includes document management, shipment tracking, and organization tools for Nigerian import businesses.',
+        'ClearPath is a B2B SaaS platform I founded for managing the entire lifecycle of an import shipment. From origin to delivery. It includes document management, shipment tracking, and organization tools for Nigerian import businesses.',
         'As solo founder and developer, I handled everything from product design to backend architecture to frontend implementation. The platform is built with NestJS, Next.js, Prisma ORM, and PostgreSQL, hosted on Render.',
       ],
       problem: [
-        'Import businesses in Nigeria manage complex shipment workflows involving multiple stakeholders: suppliers, freight forwarders, customs agents, and logistics providers. Each shipment generates dozens of documents — invoices, packing lists, bills of lading, customs forms, inspection certificates.',
+        'Import businesses in Nigeria manage complex shipment workflows involving multiple stakeholders: suppliers, freight forwarders, customs agents, and logistics providers. Each shipment generates dozens of documents. Invoices, packing lists, bills of lading, customs forms, inspection certificates.',
         'These documents are typically scattered across email threads, WhatsApp messages, and physical files. Tracking a shipment\'s status requires calling multiple parties, and missing documents can cause costly delays at ports.',
         'There was no unified platform that brought together shipment tracking, document management, and stakeholder communication in one place.',
       ],
       challenge: [
         'Building a B2B SaaS as a solo founder requires making architectural choices that balance development speed with long-term maintainability. I needed a stack that would let me ship quickly without creating technical debt.',
         'The document management system needed to handle various file types (PDFs, images, spreadsheets) with version control, access permissions, and search capabilities. Storage and retrieval needed to be fast and reliable.',
-        'Nigerian import workflows have unique requirements — NAFDAC registrations, SONCAP certificates, pre-shipment inspections — that generic logistics software does not handle. The product needed to be tailored to local requirements.',
+        'Nigerian import workflows have unique requirements, NAFDAC registrations, SONCAP certificates, pre-shipment inspections, that generic logistics software does not handle. The product needed to be tailored to local requirements.',
       ],
       approach: [
         'I chose NestJS for the backend because its modular architecture and TypeScript-first approach provide structure that helps solo developers maintain code quality. The built-in validation, dependency injection, and testing support accelerated development.',
         'Next.js with App Router handles the frontend, providing server-side rendering for SEO and static generation for performance. Prisma ORM with PostgreSQL ensures type-safe database operations and makes schema changes manageable.',
         'The document management system uses cloud storage with metadata indexing in PostgreSQL. Documents are organized by shipment, tagged by type, and searchable by content (using OCR for scanned documents).',
-        'I focused on the core workflow first — shipment creation, document upload, status tracking — before adding advanced features. This allowed me to validate the product with early users before investing in edge cases.',
+        'I focused on the core workflow first, shipment creation, document upload, status tracking, before adding advanced features. This allowed me to validate the product with early users before investing in edge cases.',
       ],
       solution: [
         'ClearPath provides a unified dashboard where import businesses can create shipments, upload and organize documents, track status through predefined workflow stages, and communicate with stakeholders.',
@@ -549,12 +549,12 @@ export const projects: Project[] = [
       ],
       impactSection: [
         'ClearPath is in early validation with Nigerian import businesses. Initial feedback has validated the core problem and the document management approach. Users have reported significant time savings from having all shipment information in one place.',
-        'The NestJS/Next.js/Prisma stack has proven to be a solid choice for solo development — the type safety catches errors early, and the modular structure makes it easy to add features incrementally.',
+        'The NestJS/Next.js/Prisma stack has proven to be a solid choice for solo development, the type safety catches errors early, and the modular structure makes it easy to add features incrementally.',
       ],
       learned: [
         'Solo founding a product requires ruthless prioritization. I learned to focus on the core workflow that delivers value and defer nice-to-have features until the product has paying users.',
         'NestJS is an excellent choice for structured backend development. The opinionated architecture prevents the "spaghetti code" that often emerges in solo projects, and the built-in testing tools encourage writing tests from the start.',
-        'Domain expertise matters. Spending time with import businesses to understand their workflows was essential for building something useful. Generic logistics knowledge was not enough — I needed to understand NAFDAC, SONCAP, and local port processes.',
+        'Domain expertise matters. Spending time with import businesses to understand their workflows was essential for building something useful. Generic logistics knowledge was not enough, I needed to understand NAFDAC, SONCAP, and local port processes.',
       ],
     },
   },
@@ -579,7 +579,7 @@ export const projects: Project[] = [
       ],
       overview: [
         'Notiflow is a distributed notification batching and delivery system built as a hands-on distributed systems learning project. It uses Apache Kafka for message streaming, implements batching logic to reduce API overhead, and handles delivery retries with exponential backoff.',
-        'The project was born from a desire to understand distributed systems concepts — message queues, consumer groups, partitioning, exactly-once semantics — by building something practical rather than just reading about them.',
+        'The project was born from a desire to understand distributed systems concepts, message queues, consumer groups, partitioning, exactly-once semantics, by building something practical rather than just reading about them.',
       ],
       problem: [
         'Sending individual notifications through third-party APIs (email, SMS, push) creates significant overhead. Each API call has latency, rate limits, and costs. For high-volume applications, sending notifications one at a time is inefficient and expensive.',
@@ -606,7 +606,7 @@ export const projects: Project[] = [
         'The project gave me practical experience with Kafka that I had previously only encountered in theory. Understanding consumer lag, partition rebalancing, and exactly-once semantics through hands-on implementation was invaluable.',
       ],
       learned: [
-        'Distributed systems are full of edge cases that only appear under load. Testing with real traffic patterns revealed issues that unit tests never would — consumer lag spikes, partition hotspots, and memory leaks in the batching service.',
+        'Distributed systems are full of edge cases that only appear under load. Testing with real traffic patterns revealed issues that unit tests never would. Consumer lag spikes, partition hotspots, and memory leaks in the batching service.',
         'Kafka is powerful but complex. Understanding the relationship between topics, partitions, and consumer groups is essential for designing systems that scale. I learned to think in terms of data flow rather than individual components.',
         'Observability is critical in distributed systems. Without metrics on throughput, latency, and error rates, you are flying blind. I integrated Prometheus and Grafana for monitoring, which quickly became the most valuable part of the project.',
       ],
@@ -637,7 +637,7 @@ export const projects: Project[] = [
       ],
       problem: [
         'Panthera Tech School needed a way to sell tickets for bootcamp graduation events, tech meetups, and workshops. Manual ticket sales through bank transfers and WhatsApp were unscalable and created reconciliation headaches.',
-        'Different events needed different ticket structures — some had free admission, others had paid tiers, and some had VIP seating. A one-size-fits-all approach would not work.',
+        'Different events needed different ticket structures, some had free admission, others had paid tiers, and some had VIP seating. A one-size-fits-all approach would not work.',
       ],
       challenge: [
         'The database schema needed to be flexible enough to support various event types and ticket structures while maintaining data integrity. A poorly designed schema would create problems as requirements evolved.',
@@ -659,7 +659,7 @@ export const projects: Project[] = [
         'As a teaching tool, the codebase has helped 100+ students understand backend development concepts in a real-world context. Students can read the code, run it locally, and extend it with new features.',
       ],
       learned: [
-        'Database design decisions have long-term consequences. Getting the schema right early — using references instead of embedding, indexing the right fields, planning for growth — prevents painful migrations later.',
+        'Database design decisions have long-term consequences. Getting the schema right early, using references instead of embedding, indexing the right fields, planning for growth, prevents painful migrations later.',
         'Race conditions in ticket sales are subtle and dangerous. I learned that optimistic locking, while simple, requires careful handling of edge cases like payment timeouts and network failures.',
         'Teaching through real code is more effective than abstract examples. Students understood database relationships better when they could see them in the context of a working application.',
       ],
