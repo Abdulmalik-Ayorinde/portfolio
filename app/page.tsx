@@ -173,12 +173,15 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-[50px] items-start justify-between">
-            {/* Left — Photo placeholder */}
+            {/* Left — Photo */}
             <div className="w-full lg:w-[461px] flex-shrink-0 flex flex-col gap-2.5 reveal">
               <div className="w-full h-[575px] max-lg:h-auto max-lg:aspect-[353/388] rounded-[5px] overflow-hidden bg-[#141414]">
-                <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
-                  <span className="text-white/20 text-lg">Profile Photo</span>
-                </div>
+                <img
+                  src="/me/Serious%20Portrait%20on%20Yellow%20Background.png"
+                  alt="Abdulmalik Ayorinde"
+                  className="w-full h-full object-cover rounded-[5px]"
+                  loading="lazy"
+                />
               </div>
               <div className="flex items-center gap-2 text-base font-normal leading-5 text-white">
                 <div className="w-3.5 h-3.5 rounded-full border border-[#0D7A50] bg-[#D9D9D9] flex items-center justify-center">
