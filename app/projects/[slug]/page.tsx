@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import ScrollReveal from '../../components/ScrollReveal'
-import { getProjectBySlug, getAllSlugs, Project } from '../../data/projects'
+import { getProjectBySlug, getAllSlugs } from '../../data/projects'
 
 interface Props {
   params: { slug: string }
@@ -35,14 +35,39 @@ function ProseBlock({ paragraphs }: { paragraphs: string[] }) {
   )
 }
 
+function SectionImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="mt-8 w-full rounded-[5px] overflow-hidden bg-[#1A1A1A]">
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-auto object-cover rounded-[5px]"
+        loading="lazy"
+      />
+    </div>
+  )
+}
+
+function SectionPlaceholder({ title }: { title: string }) {
+  return (
+    <div className="mt-8 w-full rounded-[5px] overflow-hidden bg-[#1A1A1A]">
+      <div className="w-full h-[400px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
+        <span className="text-white/15 text-lg">{title} — Screenshot</span>
+      </div>
+    </div>
+  )
+}
+
 function Section({
   id,
   title,
   paragraphs,
+  imageSrc,
 }: {
   id: string
   title: string
   paragraphs: string[]
+  imageSrc?: string
 }) {
   return (
     <section className="py-10 reveal" id={id}>
@@ -50,12 +75,11 @@ function Section({
         {title}
       </h2>
       <ProseBlock paragraphs={paragraphs} />
-      {/* Image placeholder */}
-      <div className="mt-8 w-full rounded-[5px] overflow-hidden bg-[#1A1A1A]">
-        <div className="w-full h-[400px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
-          <span className="text-white/15 text-lg">{title} — Screenshot</span>
-        </div>
-      </div>
+      {imageSrc ? (
+        <SectionImage src={imageSrc} alt={`${title} — ${imageSrc.split('/').pop()}`} />
+      ) : (
+        <SectionPlaceholder title={title} />
+      )}
     </section>
   )
 }
@@ -67,6 +91,15 @@ export default function ProjectPage({ params }: Props) {
   }
 
   const cs = project.caseStudy
+  const images = project.images || []
+  const sections = [
+    { id: 'overview', title: 'Overview', content: cs.overview },
+    { id: 'problem', title: 'The Problem', content: cs.problem },
+    { id: 'challenge', title: 'The Challenge', content: cs.challenge },
+    { id: 'approach', title: 'The Approach', content: cs.approach },
+    { id: 'solution', title: 'The Solution', content: cs.solution },
+    { id: 'impact', title: 'The Impact', content: cs.impactSection },
+  ]
 
   return (
     <>
@@ -132,9 +165,18 @@ export default function ProjectPage({ params }: Props) {
 
           {/* Hero Image */}
           <div className="w-full rounded-[5px] overflow-hidden bg-[#1A1A1A] mb-10 reveal">
-            <div className="w-full h-[500px] max-md:h-[300px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
-              <span className="text-white/15 text-2xl font-semibold">{project.title} — Hero Preview</span>
-            </div>
+            {project.heroImage ? (
+              <img
+                src={project.heroImage}
+                alt={`${project.title} — Hero Preview`}
+                className="w-full h-auto object-cover rounded-[5px]"
+                loading="eager"
+              />
+            ) : (
+              <div className="w-full h-[500px] max-md:h-[300px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
+                <span className="text-white/15 text-2xl font-semibold">{project.title} — Hero Preview</span>
+              </div>
+            )}
           </div>
 
           {/* Highlights Block */}
@@ -159,12 +201,15 @@ export default function ProjectPage({ params }: Props) {
 
           {/* Sections */}
           <div className="flex flex-col">
-            <Section id="section-overview" title="Overview" paragraphs={cs.overview} />
-            <Section id="section-problem" title="The Problem" paragraphs={cs.problem} />
-            <Section id="section-challenge" title="The Challenge" paragraphs={cs.challenge} />
-            <Section id="section-approach" title="The Approach" paragraphs={cs.approach} />
-            <Section id="section-solution" title="The Solution" paragraphs={cs.solution} />
-            <Section id="section-impact" title="The Impact" paragraphs={cs.impactSection} />
+            {sections.map((section, idx) => (
+              <Section
+                key={section.id}
+                id={`section-${section.id}`}
+                title={section.title}
+                paragraphs={section.content}
+                imageSrc={images[idx % images.length]}
+              />
+            ))}
             <section className="py-10 reveal" id="section-learned">
               <h2 className="text-[30px] font-semibold leading-9 text-white mb-3 tracking-[-0.01em]">
                 What I Learned

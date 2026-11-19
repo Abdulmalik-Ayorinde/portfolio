@@ -9,6 +9,8 @@ export interface Project {
   type: 'web' | 'mobile' | 'other'
   link?: string
   featured: boolean
+  heroImage?: string
+  images?: string[]
   caseStudy: {
     client: string
     role: string
@@ -36,6 +38,8 @@ export const projects: Project[] = [
     type: 'web',
     link: 'https://openfields.ai',
     featured: true,
+    heroImage: '/openfield-images/Hero.png',
+    images: ['/openfield-images/product-view.png', '/openfield-images/image.png'],
     caseStudy: {
       client: 'OpenFields',
       role: 'Full Stack Engineer',
@@ -96,6 +100,8 @@ export const projects: Project[] = [
     type: 'mobile',
     link: 'https://apps.apple.com/us/app/rentzen/id6740734022',
     featured: true,
+    heroImage: '/rentzen-images/wesite-screenshot/Hero.png',
+    images: ['/rentzen-images/wesite-screenshot/Landlord.png', '/rentzen-images/wesite-screenshot/Tenant.png', '/rentzen-images/wesite-screenshot/image.png'],
     caseStudy: {
       client: 'Rentzen',
       role: 'Tech Lead & Full Stack Engineer',
@@ -156,6 +162,8 @@ export const projects: Project[] = [
     type: 'mobile',
     link: 'https://apps.apple.com/ng/app/dertbag/id6480380013',
     featured: true,
+    heroImage: '/dertbag-images/appstore.png',
+    images: ['/dertbag-images/appgroup-screenshot.png'],
     caseStudy: {
       client: 'Dertbag',
       role: 'Full Stack Engineer',
@@ -216,6 +224,8 @@ export const projects: Project[] = [
     type: 'web',
     link: 'https://pantheratechschool.com',
     featured: true,
+    heroImage: '/panthera-images/Hero.png',
+    images: ['/panthera-images/dashboard.png', '/panthera-images/courses.png', '/panthera-images/Course-preview.png'],
     caseStudy: {
       client: 'Panthera Tech School',
       role: 'Lead Instructor & Software Engineer',

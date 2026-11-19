@@ -38,9 +38,18 @@ export default function ProjectsPage() {
             {projects.map((project) => (
               <article key={project.slug} className="flex flex-col w-full reveal">
                 <div className="w-full aspect-[1254/956] rounded-[5px] overflow-hidden bg-[#141414] block group">
-                  <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center transition-transform duration-[400ms] ease-out group-hover:scale-[1.02]">
-                    <span className="text-white/20 text-xl font-semibold">{project.title}</span>
-                  </div>
+                  {project.heroImage ? (
+                    <img
+                      src={project.heroImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-[5px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center transition-transform duration-[400ms] ease-out group-hover:scale-[1.02]">
+                      <span className="text-white/20 text-xl font-semibold">{project.title}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-6 flex flex-col gap-6">
                   <div className="flex flex-col gap-3">

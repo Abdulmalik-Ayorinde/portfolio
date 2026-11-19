@@ -84,9 +84,18 @@ export default function Home() {
                   className="reel-tile"
                   aria-label={`${project.title} Project Details`}
                 >
-                  <div className="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
-                    <span className="text-white/30 text-sm font-medium">{project.title}</span>
-                  </div>
+                  {project.heroImage ? (
+                    <img
+                      src={project.heroImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-[5px]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                      <span className="text-white/30 text-sm font-medium">{project.title}</span>
+                    </div>
+                  )}
                 </Link>
               ))}
             </div>
@@ -103,9 +112,18 @@ export default function Home() {
             {featured.map((project) => (
               <article key={project.slug} className="project-card flex flex-col w-full reveal">
                 <div className="w-full h-[750px] max-md:h-auto max-md:aspect-[353/265] rounded-[5px] overflow-hidden bg-[#141414]">
-                  <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center project-card-img">
-                    <span className="text-white/20 text-2xl font-semibold">{project.title}</span>
-                  </div>
+                  {project.heroImage ? (
+                    <img
+                      src={project.heroImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-[5px] project-card-img"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center project-card-img">
+                      <span className="text-white/20 text-2xl font-semibold">{project.title}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-col md:flex-row justify-between items-start gap-6 mt-[30px]">
                   <div className="flex-1 max-w-[555px]">
@@ -197,7 +215,7 @@ export default function Home() {
                   growing the people around me.
                 </p>
                 <p>
-                  When I&apos;m not building, you&apos;ll find me exploring new technologies, contributing to open source,
+                  When I&apos;m not building, you&apos;ll find me exploring new technologies,
                   or sharing knowledge with the developer community.
                 </p>
               </div>
